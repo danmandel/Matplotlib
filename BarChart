@@ -1,0 +1,27 @@
+from pylab import *
+
+name = []
+value = []
+
+readFile = open('exampleFile.csv','r').read()
+eachLine = readFile.split('\n')
+
+for line in eachLine:
+    split=line.
+    name.append(split[0]) #for each line append first 
+    value.append(float(split[1])) # for each line append second element
+
+subplots_adjust(left=.20,right=.97)
+tick_params(axis='x', colors='#072b57')
+tick_params(axis='y', colors='#072b57')
+
+xlabel('Sentiment Index', color='#072b57')
+ylabel('Candidates',color='#072b57')
+title('Title', color='#072b57')
+
+pos = arange(len(name))+.5
+barh(pos, value, align='center', color='#b8ff5c')
+yticks(pos,name)
+grid(True)
+show()
+
